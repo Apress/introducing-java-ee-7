@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:j="http://java.sun.com/jsf/flow">    
+    <f:metadata>
+        <j:faces-flow-definition>
+            <j:flow-return id="intermediateFlow">
+                <j:navigation-case>
+                    <j:from-outcome>nextViewNode</j:from-outcome>
+                </j:navigation-case>
+        </j:flow-return>
+        <j:flow-return id="errorOccurred">
+            <j:navigation-case>
+                <j:from-outcome>error</j:from-outcome>
+            </j:navigation-case>
+        </j:flow-return>
+        
+        <j:initializer>#{flowBean.initializeIt}</j:initializer>
+        <j:finalizer>#{flowBean.finalizeIt}</j:finalizer>            
+        </j:faces-flow-definition>
+    </f:metadata>
+</html>

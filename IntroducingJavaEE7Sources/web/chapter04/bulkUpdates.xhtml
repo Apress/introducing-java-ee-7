@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Bulk Update Example</title>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="../layout/custom_template.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <h:dataTable var="emp" border="1" value="#{criteriaUpdates.employeeList}">
+
+                        <h:column>
+                            <f:facet name="header">
+                                First 
+                            </f:facet>
+                            <h:outputText value="#{emp.first}"/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Last 
+                            </f:facet>
+                            <h:outputText value="#{emp.last}"/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Salary 
+                            </f:facet>
+                            <h:outputText value="#{emp.status}"/>
+                        </h:column>
+                    </h:dataTable>
+
+                    <br/><br/>
+                    <h:commandButton value="Make Employees Active" action="#{criteriaUpdates.updateEmployeeStatusInactive()}"/>
+                    <br/><br/>
+                    <h:commandButton value="Make Employees Inactive" action="#{criteriaUpdates.updateEmployeeStatusActive()}"/>
+                </h:form>
+                <br/><br/>
+                
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>

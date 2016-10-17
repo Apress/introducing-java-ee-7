@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Passthrough Attribute Examples</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../layout/custom_template.xhtml">
+            <ui:define name="content">
+        <h:form>
+            Using the passthrough placeholder attribute:
+            <h:inputText value="#{ptBean.ptValue1}" p:placeholder="Passthrough Attribute 1">
+                <f:ajax execute="@this" render="ptValues2"/>
+            </h:inputText>
+            <br/><br/>
+            Using the f:passThroughAttribute taghandler:
+            <h:inputText value="#{ptBean.ptValue2}" >
+                <f:passThroughAttribute name="ptValue2" value="Passthrough Attribute 2" />
+                <f:ajax execute="@this" render="ptValues2"/>
+            </h:inputText>
+            <br/><br/>
+            Multiple Passthrough Attributes
+           
+            <br/><br/>
+            <h:outputText id="ptValues2" value="Attribute Values:" >
+                <f:passThroughAttributes value="#{ptBean.ptValues}" />
+            </h:outputText>
+        </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

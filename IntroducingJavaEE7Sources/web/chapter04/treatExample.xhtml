@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>TREAT Example</title>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="../layout/custom_template.xhtml">
+            <ui:define name="content">
+        <p>
+            The following data is obtained via query containing the TREAT keyword.
+        </p>
+        <h:dataTable var="product" border="1" value="#{productBean.productType()}">
+            <h:column>
+                <f:facet name="header">
+                    Product Name
+                </f:facet> 
+                <h:outputText value="#{product.name}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    Product Color
+                </f:facet> 
+                <h:outputText value="#{product.color}"/>
+            </h:column>
+           
+        </h:dataTable>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

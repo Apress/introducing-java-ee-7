@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>ON Condition Example</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../layout/custom_template.xhtml">
+            <ui:define name="content">
+                <p>
+                    The following table demonstrates the results of utilizing an ON condition
+                    within a JOIN query.  The sources for this code can be found in the
+                    org.javaee7.jpa.session.EmployeeSession.java file.
+
+                </p>
+                <h:dataTable var="job" border="1" value="#{employeeBean.activeEmployeeCount()}">
+                    <h:column>
+                        <f:facet name="header">
+                            Title
+                        </f:facet> 
+                        <h:outputText value="#{job.title}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Employee Count
+                        </f:facet> 
+                        <h:outputText value="#{job.count}"/>
+                    </h:column>
+
+                </h:dataTable>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

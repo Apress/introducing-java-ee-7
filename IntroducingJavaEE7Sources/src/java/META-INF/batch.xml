@@ -1,0 +1,5 @@
+<batch-artifacts xmlns="http://jcp.org.batch/jsl">
+    <ref id="acmeReader" class="org.javaee7.chapter11.AcmeReader"/>
+    <ref id="acmeProcessor" class="org.javaee7.chapter11.AcmeProcessor"/>
+    <ref id="acmeWriter" class="org.javaee7.chapter11.AcmeWriter"/>
+</batch-artifacts>

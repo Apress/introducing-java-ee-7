@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Servlet File Upload Example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form method="POST" action="/IntroToJavaEE7/uploadFile" enctype="multipart/form-data" >
+            <p>Servlet File Upload Example</p>
+            Select File:
+            <input type="file" name="myfile" id="myfile" /> <br/>
+            Where to place the file on disk:
+            <input type="text" value="/java_dev/temp" name="destination"/>
+            </br>
+            <input type="submit" value="Upload" name="upload" id="upload" />
+        </form>
+    </body>
+</html>

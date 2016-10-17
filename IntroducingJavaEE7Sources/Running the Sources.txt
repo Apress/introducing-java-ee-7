@@ -1,0 +1,35 @@
+This short instruction set explains how to set up the Netbeans project for running the examples for the Introducing Java EE 7 book.  It involves installation and configuration of Glassfish v4 Application Server, JDK 7, and Netbeans 7.3.1 or greater.
+
+** Note, the sources for this book can be built and deployed to an application server in order to run the demo application.  Most chapters in this book contain working examples that can be tested via the demo web application.
+
+Perform the following steps to set up the Netbeans Project
+==========================================================
+
+1)  Obtain the latest release of Glassfish v4 application server .  It can be obtained from http://glassfish.java.net in the downloads section.
+
+2)  Extract the GlassFish ZIP file into a directory on your workstation.
+
+3)  If JDK 7 is not the default Java Development Kit on your machine, modify the asenv.conf which resides within the glassfish_home/glassfish4/glassfish/config directory and add an AS_JAVA property that is equal to the location of your JDK 7 installation.  For instance:
+AS_JAVA="/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home"
+
+4)  Use JDK 7 to start your GlassFish server when it is time to deploy and run the application.
+
+5)  Download and install NetBeans 7.3.1 or greater from http://netbeans.org if you do not already have a copy of it.
+
+6)  Extract the contents of this zip file to your file system…the src and web directories will be copied into a new NetBeans project.
+
+7)  Open Netbeans, and configure it to use your GlassFish v4 installation by setting up a new server if needed.
+
+8)  Set up your Oracle or Apache Derby database by creating a database and user in which to install the demo schema.  Configure your GlassFish JDBC connection factory to connect to the database and user schema that you have installed for the application.  Run the SQL file that is contained with the sources in order to install the demo schema objects.
+
+9)  Once the project is in Netbeans, right-click on it and open the properties.
+    - Sources menu:  Ensure Source/Binary Format is set to JDK7
+    - Libraries Menu:  
+        - Ensure Java Platform is set to your JDK7 Platform (may need to add a JDK7 platform to your Netbeans install)
+        - Add the ojdbc6.jar or the derbyclient.jar JAR file to the project
+    - Run Menu:  Set server equal to your GlassFish v4 installation
+
+10)  Using your operating file system, copy the contents of the "src" and "web" directories that are contained within the book sources into their corresponding "src" and "web" directories within the NetBeans project you have created.  Build and deploy project.
+
+
+ 

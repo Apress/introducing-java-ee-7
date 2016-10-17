@@ -1,0 +1,33 @@
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <flow-definition id="exampleFlow">
+
+        <flow-return id="intermediateFlow">
+            <navigation-case>
+                <from-outcome>nextViewNode</from-outcome>
+            </navigation-case>
+        </flow-return>
+        <flow-return id="errorOccurred">
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+            </navigation-case>
+        </flow-return>
+        
+        <initializer>#{flowBean.initializeIt}</initializer>
+        <finalizer>#{flowBean.finalizeIt}</finalizer>
+    </flow-definition>
+    
+    <application>
+        <resource-library-contracts>
+            <contract-mapping>
+                <url-pattern>/chapter02/blanco/*</url-pattern>
+                <contracts>blanco</contracts>
+            </contract-mapping>
+            <contract-mapping>
+                <url-pattern>/chapter02/mocha/*</url-pattern>
+                <contracts>mocha</contracts>
+            </contract-mapping>
+        </resource-library-contracts>
+    </application>
+</faces-config>
